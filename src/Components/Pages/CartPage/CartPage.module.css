@@ -1,0 +1,35 @@
+.titleHead {
+  margin-left: 7%;
+  margin-top: 35px;
+}
+
+.emptyCart {
+  color: #ffff;
+  font-size: 50px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  margin-left: 38%;
+  margin-top: 6%;
+  padding-bottom: 18px;
+}
+.funnyText {
+  color: rgb(201, 201, 201);
+  font-size: 35px;
+  margin-left: 41%;
+}
+.emptyCartImg {
+  padding-top: 50px;
+  margin-left: 35%;
+}
+.totalyGoodsText {
+}
+.totalyGoodsContainer {
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  padding: 1%;
+  position: relative;
+  top: -53px;
+  max-width: max-content;
+  margin-left: 75%;
+  background-color: white;
+}

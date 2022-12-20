@@ -1,0 +1,135 @@
+body {
+  background-image: linear-gradient(
+    to right bottom,
+    #b91eda,
+    #a02ae0,
+    #8234e5,
+    #5d3be8,
+    #1241eb
+  );
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+main {
+  max-width: 500px;
+}
+.card {
+  box-shadow: 10px 6px 6px rgba(#000, 0.3);
+  transition: 200ms;
+  background: #fff;
+}
+.card__title {
+  display: flex;
+  align-items: center;
+  padding: 25px 20px;
+  margin-left: 250px;
+}
+h3 {
+  flex: 0 1 200px;
+  text-align: right;
+  margin: 0;
+  color: #252525;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.card__body {
+  padding: 0 40px;
+  display: flex;
+  flex-flow: row no-wrap;
+  margin-bottom: 25px;
+}
+.half {
+  box-sizing: border-box;
+  padding: 0 15px;
+  flex: 1 0 50%;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: 650;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 34px;
+  line-height: 50px;
+  color: #181e28;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  text-transform: uppercase;
+  color: #686e77;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-family: 'Fjalla One', sans-serif;
+  color: #252525;
+  font-size: 26px;
+}
+.image {
+  padding-top: 15px;
+  width: 100%;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.description {
+  margin-bottom: 25px;
+  border-right: solid 3px;
+
+  border-right-color: rgba(0, 93, 255, 0.4);
+}
+p {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 27px;
+  font-size: 16px;
+  color: #555;
+}
+span.stock {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #a1cc16;
+  width: 0%;
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid #115dd8;
+  padding: 16px 25px;
+  border-radius: 200px;
+  color: #fff;
+  background: #115dd8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  transition: 200ms;
+  margin-left: 260px;
+}
+.button:hover {
+  background: #fff;
+  color: #115dd8;
+}
+.card__footer {
+  padding: 30px 40px;
+  display: flex;
+  flex-flow: row no-wrap;
+  align-items: center;
+  border-top: solid 3px;
+
+  border-radius: 20px;
+  border-top-color: rgba(0, 93, 255, 0.4);
+}

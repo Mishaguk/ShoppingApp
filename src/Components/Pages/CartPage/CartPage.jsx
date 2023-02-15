@@ -5,7 +5,7 @@ import { getCartItems } from '../../../redux/shop/cart/cartSelector';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Backdrop from '@mui/material/Backdrop';
-import Zoom from '@mui/material/Zoom';
+
 import { useState } from 'react';
 import Fade from '@mui/material/Fade';
 
@@ -22,17 +22,12 @@ const CartPage = () => {
   const cartItems = useSelector(getCartItems);
   const [showModal, setShowModal] = useState(false);
   const [productId, setProductId] = useState(null);
-  const [isEmptyCart, setIsEmptyCart] = useState(true);
+  const isEmptyCart = !cartItems.length;
   const cartItemById = cartItems.find((item) => item.id === productId);
-  if (cartItems.length !== 0) {
-    setTimeout(() => {
-      setIsEmptyCart(false);
-    });
-  } else if (cartItems.length === 0) {
-    setTimeout(() => {
-      setIsEmptyCart(true);
-    }, 300);
-  }
+  const totalPrice = cartItems.reduce(
+    (acc, currentItem) => acc + currentItem.price,
+    0
+  );
   const getId = (id) => {
     setProductId(id);
   };
@@ -73,16 +68,28 @@ const CartPage = () => {
           <span className={styles.funnyText}>But you can change it :)</span>
           <img
             src="https://cdn-icons-png.flaticon.com/512/102/102661.png"
+            width="300"
+            height="300"
             className={styles.emptyCartImg}
           ></img>
         </div>
       ) : (
         <div>
-          <div className={styles.totalyGoodsContainer}>
-            <span className={styles.totalyGoodsText}>
-              Totaly goods : {cartItems.length}
+          <div className={styles.goodsInfoContainer}>
+            <span className={styles.totalPrice}>
+              <h4 className={styles.goodsInfoText}>
+              
+                Total price : {totalPrice}$
+              </h4>
+            </span>
+
+            <span className={styles.totalGoods}>
+              <h4 className={styles.goodsInfoText}>
+                Total goods : {cartItems.length}
+              </h4>
             </span>
           </div>
+
           <CartList updateModal={updateModal} getId={getId} />
         </div>
       )}

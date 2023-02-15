@@ -1,7 +1,21 @@
 li {
-  list-style-type: none;
-  display: inline-block;
-  margin: 15px;
+  margin: 1%;
 }
+
 ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+@media (max-width: 1148px) {
+  ul {
+    justify-content: space-evenly;
+  }
+}
+@media (max-width: 360px) {
+  ul {
+    flex-direction: column;
+  }
 }

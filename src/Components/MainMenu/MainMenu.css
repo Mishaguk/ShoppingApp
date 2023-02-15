@@ -2,28 +2,45 @@
   display: inline-flex;
   border-bottom: 2px solid rgb(190, 184, 184);
   background-color: white;
-  height: max-content;
+
   padding-left: 5px;
   /* border-top-right-radius: 20px;
   border-bottom-right-radius: 20px; */
   border-bottom-right-radius: 200px;
   position: relative;
-  width: 70%;
+  width: 60%;
 }
 
 .title-text {
-  margin-left: 1%;
-  position: relative;
-  margin-top: 1.5%;
-
-  font-size: large;
-  margin-bottom: 5px;
-  height: fit-content;
+  display: flex;
+  align-items: center;
+  font-size: larger;
 }
-span {
+
+.shoppingAppText {
+  height: fit-content;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
 }
-.shoppingAppText {
-  height: fit-content;
+
+@media (max-width: 1150px) {
+  .main-div {
+    display: flex;
+    flex-direction: column;
+  }
+  .title-text {
+    justify-content: center;
+  }
+}
+@media (max-width: 680px) {
+  .main-div {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+@media (max-width: 360px) {
+  .main-div {
+    width: 360px;
+    border-radius: 0;
+  }
 }

@@ -1,35 +1,64 @@
-.titleHead {
-  margin-left: 7%;
-  margin-top: 35px;
-}
-
 .emptyCart {
   color: #ffff;
   font-size: 50px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
-  margin-left: 38%;
-  margin-top: 6%;
-  padding-bottom: 18px;
+}
+.goodsInfoContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  height: 50px;
+}
+
+.emptyCartContainer {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .funnyText {
   color: rgb(201, 201, 201);
   font-size: 35px;
-  margin-left: 41%;
+  margin: 15px;
 }
 .emptyCartImg {
-  padding-top: 50px;
-  margin-left: 35%;
+  margin-top: 10px;
 }
-.totalyGoodsText {
-}
-.totalyGoodsContainer {
-  border-bottom-right-radius: 40px;
-  border-bottom-left-radius: 40px;
-  padding: 1%;
-  position: relative;
-  top: -53px;
-  max-width: max-content;
-  margin-left: 75%;
+.totalGoods {
   background-color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 18px;
+  margin-right: 10px;
+}
+.totalPrice {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 18px;
+  margin-right: 10px;
+}
+.goodsInfoText {
+  margin: 8px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-weight: normal;
+}
+
+@media (max-width: 424px) {
+  .emptyCart {
+    font-size: xx-large;
+  }
+  .funnyText {
+    font-size: x-large;
+  }
+}
+@media (max-width: 360px) {
+  .emptyCartContainer {
+    width: 360px;
+  }
+  .goodsInfoContainer {
+    width: 360px;
+  }
 }

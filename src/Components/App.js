@@ -6,6 +6,10 @@ import Home from './Pages/HomePage/Home';
 import CartPage from './Pages/CartPage/CartPage';
 import ProductsPage from './Pages/ProductsPage/ProductsPage';
 
+const style = {
+  display: 'flex',
+};
+
 const App = () => {
   return (
     <div>

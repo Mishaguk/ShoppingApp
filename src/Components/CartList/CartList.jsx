@@ -18,22 +18,19 @@ const CartList = ({ updateModal, getId }) => {
   );
 
   return (
-    <ul>
-      <TransitionGroup className="cart-items-list">
-        {cartItems.map((item) => (
-          <CSSTransition key={item.id} timeout={300} classNames={animations}>
-            <li key={item.id}>
-              <CartItem
-                {...item}
-                onDelete={handleDelete}
-                onClickModal={updateModal}
-                onClickId={getId}
-              />
-            </li>
-          </CSSTransition>
-        ))}
-      </TransitionGroup>
-    </ul>
+    <TransitionGroup className={styles.cartItemsList} component="ul">
+      {cartItems.map((item) => (
+        <CSSTransition key={item.id} timeout={300} classNames={animations}>
+          <CartItem
+            {...item}
+            onDelete={handleDelete}
+            onClickModal={updateModal}
+            onClickId={getId}
+            key={item.id}
+          />
+        </CSSTransition>
+      ))}
+    </TransitionGroup>
   );
 };
 

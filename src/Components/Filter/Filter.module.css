@@ -30,7 +30,7 @@
   letter-spacing: 1.5px;
 }
 .label {
-  margin-left: 11%;
+  margin-left: 40px;
   width: 40%;
   height: min-content;
   margin-bottom: 0.5%;
@@ -42,4 +42,19 @@ input:hover,
   border-bottom: 1px solid #575756;
   border-radius: 0;
   background-position: 100% center;
+}
+
+@media (max-width: 1150px) {
+  .label {
+    width: 80%;
+    display: flex;
+  }
+}
+@media (max-width: 680px) {
+  .label {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }

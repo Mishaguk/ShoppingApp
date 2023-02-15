@@ -1,11 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.css';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
 
 const Navigation = () => {
   return (
@@ -35,7 +30,7 @@ const Navigation = () => {
         Cart
       </NavLink>
       <NavLink
-        className={styles.tabButtonProfile}
+        className={styles.tabButton}
         to="/Profile"
         style={({ isActive }) =>
           isActive ? { borderBottom: 'solid 1px #00ccff' } : undefined

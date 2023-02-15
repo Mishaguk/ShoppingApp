@@ -13,22 +13,19 @@ body {
   background-attachment: fixed;
 }
 
-main {
-  max-width: 500px;
-}
 .card {
   box-shadow: 10px 6px 6px rgba(#000, 0.3);
   transition: 200ms;
   background: #fff;
+  height: 600px;
 }
 .card__title {
-  display: flex;
-  align-items: center;
-  padding: 25px 20px;
-  margin-left: 250px;
+  /* display: flex;
+  align-items: center; */
+  padding: 8px 9px;
+  /* margin-left: 57%; */
 }
 h3 {
-  flex: 0 1 200px;
   text-align: right;
   margin: 0;
   color: #252525;
@@ -37,16 +34,20 @@ h3 {
   font-size: 20px;
   text-transform: uppercase;
 }
+
 .card__body {
-  padding: 0 40px;
+  /* padding: 0 8%; */
   display: flex;
-  flex-flow: row no-wrap;
-  margin-bottom: 25px;
+  flex-direction: column;
+  /* flex-flow: row no-wrap; */
+  /* margin-bottom: 6%; */
+  /* height: 32%; */
 }
+
 .half {
-  box-sizing: border-box;
-  padding: 0 15px;
-  flex: 1 0 50%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -69,6 +70,10 @@ p {
   color: #686e77;
   font-weight: 300;
   margin-bottom: 5px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .price {
@@ -76,19 +81,30 @@ p {
   color: #252525;
   font-size: 26px;
 }
+
 .image {
-  padding-top: 15px;
-  width: 100%;
-}
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  padding: 0 10px;
+  /* flex-wrap: nowrap; */
+  /* flex-direction: column; */
+  /* padding: 1% 2%; */
+
+  img {
+    width: 100%;
+  }
 }
 
 .description {
-  margin-bottom: 25px;
+  // display: block;
+  // width: 100%;
+  overflow-y: scroll;
+  height: 200px;
+  margin-bottom: 10px;
   border-right: solid 3px;
+  padding: 0 10px;
 
   border-right-color: rgba(0, 93, 255, 0.4);
 }
@@ -117,19 +133,84 @@ span.stock {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   transition: 200ms;
-  margin-left: 260px;
 }
 .button:hover {
   background: #fff;
   color: #115dd8;
 }
 .card__footer {
-  padding: 30px 40px;
+  padding: 8px 8px;
+
   display: flex;
   flex-flow: row no-wrap;
+  justify-content: space-between;
   align-items: center;
   border-top: solid 3px;
-
   border-radius: 20px;
   border-top-color: rgba(0, 93, 255, 0.4);
 }
+
+.item {
+  border-radius: 5px;
+  background-color: #fff;
+  width: 360px;
+}
+
+.featuredText {
+  padding: 0 10px;
+}
+
+.tooltip {
+  position: relative;
+  max-width: fit-content;
+}
+.tooltip .tooltipText {
+  visibility: hidden;
+  width: 120px;
+  bottom: 100%;
+  left: 75%;
+  margin-left: -60px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover .tooltipText {
+  visibility: visible;
+}
+
+@media (max-width: 360px) {
+  .item {
+  }
+}
+
+/* @media (max-width: 1630px) {
+  .main {
+    width: 90%;
+  }
+}
+@media (max-width: 1530px) {
+  .card__body {
+    flex-direction: column;
+  }
+  .featured_text {
+  }
+  .description {
+    overflow-y: scroll;
+    height: 300px;
+  }
+}
+
+@media (max-width: 1235px) {
+  .card__title {
+    margin-left: 30%;
+  }
+  h3 {
+    font-size: 90%;
+  }
+} */

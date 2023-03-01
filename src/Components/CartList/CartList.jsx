@@ -11,9 +11,18 @@ import styles from './CartList.module.css';
 const CartList = ({ updateModal, getId }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector(getCartItems);
-  console.log(cartItems);
+
   const handleDelete = useCallback(
     (id) => dispatch(operations.deleteCartItem(id)),
+
+    [dispatch]
+  );
+  const handleIncrement = useCallback(
+    (id) => dispatch(operations.increment(id)),
+    [dispatch]
+  );
+  const handleDecrement = useCallback(
+    (id) => dispatch(operations.decrement(id)),
     [dispatch]
   );
 
@@ -24,6 +33,8 @@ const CartList = ({ updateModal, getId }) => {
           <CartItem
             {...item}
             onDelete={handleDelete}
+            onIncrement={handleIncrement}
+            onDecrement={handleDecrement}
             onClickModal={updateModal}
             onClickId={getId}
             key={item.id}

@@ -1,6 +1,9 @@
 import styles from './ProductItem.module.scss';
 import { useDispatch } from 'react-redux';
 import * as operations from '../../redux/shop/cart/cartOperations';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { getCartItems } from '../../redux/shop/cart/cartSelector';
 
 const ProductItem = ({
   name,
@@ -11,10 +14,12 @@ const ProductItem = ({
   id,
   onClickModal,
   onClickId,
+  amount,
 }) => {
   const dispatch = useDispatch();
   const handleClick = (e) => {
     e.preventDefault();
+    amount = amount + 1;
     dispatch(
       operations.addProduct({
         id,
@@ -23,6 +28,7 @@ const ProductItem = ({
         price,
         manufacturer,
         description,
+        amount,
       })
     );
   };
@@ -44,7 +50,7 @@ const ProductItem = ({
         </div>
 
         <div className={styles.image}>
-          <img  
+          <img
             onClick={() => {
               onClickModal();
               onClickId(id);

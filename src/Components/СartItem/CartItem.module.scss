@@ -6,7 +6,7 @@
 }
 .card__remove {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 8px 9px;
 }
 
@@ -170,4 +170,10 @@ span.stock {
 }
 .tooltip:hover .tooltipText {
   visibility: visible;
+}
+.amountText {
+  margin-left: 10px;
+  font-size: larger;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

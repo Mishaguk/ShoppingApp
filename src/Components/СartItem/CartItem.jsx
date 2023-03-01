@@ -2,6 +2,7 @@ import styles from './CartItem.module.scss';
 import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { ButtonGroup } from '@mui/material';
 import * as operations from '../../redux/shop/cart/cartOperations';
 const CartItem = ({
   name,
@@ -13,11 +14,26 @@ const CartItem = ({
   id,
   onClickModal,
   onClickId,
+  onIncrement,
+  onDecrement,
+  amount,
 }) => {
   const dispatch = useDispatch();
   return (
     <li className={styles.item}>
+      <div className={styles.goodsCounter}></div>
       <div className={styles.card__remove}>
+        <div className={styles.goodsCounter}>
+          <ButtonGroup
+            disableElevation
+            variant="contained"
+            aria-label="Disabled elevation buttons"
+          >
+            <Button onClick={() => onDecrement(id)}>-1</Button>
+            <Button onClick={() => onIncrement(id)}>+1</Button>
+          </ButtonGroup>
+          <span className={styles.amountText}>x{amount}</span>
+        </div>
         <Button
           variant="outlined"
           startIcon={<DeleteIcon />}

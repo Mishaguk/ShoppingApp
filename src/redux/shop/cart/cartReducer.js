@@ -7,20 +7,33 @@ const initalState = {
 
 const addProduct = (state, action) => {
   const product = state.find((item) => item.id === action.payload.id);
-  console.log(product);
+
   if (!product) {
-    toastr.success(`You added ${action.payload.name} to your cart `);
+    toastr.success(
+      `You added ${action.payload.manufacturer} ${action.payload.name} to your cart `
+    );
     return [...state, action.payload];
   } else {
-    toastr.info('You already added this product to cart');
+    toastr.info(`You have already added it to the cart`);
   }
 };
 const deleteCartItem = (state, action) =>
   state.filter((item) => item.id !== action.payload);
 
+const increment = (state, action) => {
+  const product = state.find((item) => item.id === action.payload);
+  product.amount += 1;
+};
+const decrement = (state, action) => {
+  const product = state.find((item) => item.id === action.payload);
+  if (product.amount > 1) product.amount -= 1;
+};
+
 const cart = createReducer(initalState.items, {
-  [actions.addProductSucces]: addProduct,
+  [actions.addProduct]: addProduct,
   [actions.deleteCartItem]: deleteCartItem,
+  [actions.increment]: increment,
+  [actions.decrement]: decrement,
 });
 
 export default cart;

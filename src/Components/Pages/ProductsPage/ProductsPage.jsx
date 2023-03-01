@@ -22,7 +22,7 @@ const ProductsPage = () => {
   const productsItems = useSelector(getProducts());
   const [showModal, setShowModal] = useState(false);
   const [productId, setProductId] = useState(null);
-  console.log(productsItems);
+
   const productItemById = productsItems.find((item) => item.id === productId);
 
   const getId = (id) => {

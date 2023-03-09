@@ -9,6 +9,7 @@
   border-bottom-right-radius: 200px;
   position: relative;
   width: 60%;
+  height: 50px;
 }
 
 .title-text {
@@ -27,6 +28,7 @@
   .main-div {
     display: flex;
     flex-direction: column;
+    height: auto;
   }
   .title-text {
     justify-content: center;

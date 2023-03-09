@@ -1,5 +1,5 @@
 import ProductsList from '../../ProductsList/ProductsList';
-import './ProductsPage.css';
+import styles from './ProductsPage.module.css';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getProducts } from '../../../redux/shop/catalog/catalogSelector';
@@ -7,7 +7,6 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Backdrop from '@mui/material/Backdrop';
 import Fade from '@mui/material/Fade';
-import '../ProductsPage/ProductsPage.css';
 
 const style = {
   position: 'absolute',
@@ -39,23 +38,25 @@ const ProductsPage = () => {
   return (
     <div>
       {productItemById ? (
-        <Modal
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
-          open={showModal}
-          onClose={handleClose}
-          closeAfterTransition
-          BackdropComponent={Backdrop}
-          BackdropProps={{
-            timeout: 500,
-          }}
-        >
-          <Fade in={showModal}>
-            <Box sx={style}>
-              <img src={productItemById.img}></img>
-            </Box>
-          </Fade>
-        </Modal>
+        <div className={styles.modal}>
+          <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            open={showModal}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <Fade in={showModal}>
+              <Box sx={style}>
+                <img src={productItemById.img}></img>
+              </Box>
+            </Fade>
+          </Modal>
+        </div>
       ) : (
         ''
       )}

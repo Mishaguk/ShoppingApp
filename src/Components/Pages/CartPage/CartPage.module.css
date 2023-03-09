@@ -7,8 +7,6 @@
 .goodsInfoContainer {
   display: flex;
   justify-content: center;
-  padding-top: 15px;
-  height: 50px;
 }
 
 .emptyCartContainer {
@@ -26,17 +24,14 @@
   margin-top: 10px;
 }
 .totalGoods {
-  background-color: white;
   display: flex;
   align-items: center;
   border-radius: 18px;
-  margin-right: 10px;
 }
 .totalPrice {
-  background-color: white;
   display: flex;
   align-items: center;
-  border-radius: 18px;
+
   margin-right: 10px;
 }
 .goodsInfoText {
@@ -60,5 +55,10 @@
   }
   .goodsInfoContainer {
     width: 360px;
+  }
+}
+@media (min-width: 1150px) {
+  .goodsInfoContainer {
+    margin-left: 30px;
   }
 }

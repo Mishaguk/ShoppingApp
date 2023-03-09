@@ -3,10 +3,13 @@ import { useDispatch } from 'react-redux';
 import { getFilter } from '../../redux/shop/catalog/catalogSelector';
 import * as actions from '../../redux/shop/catalog/catalogActions';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(getFilter);
-
+  let filter = useSelector(getFilter);
+  useEffect(() => {
+    filter = '';
+  });
   const handleChange = (e) => {
     dispatch(actions.filterProducts(e.target.value));
   };
